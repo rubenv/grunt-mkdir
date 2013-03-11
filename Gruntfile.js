@@ -64,26 +64,8 @@ module.exports = function(grunt) {
   this.loadNpmTasks('grunt-mocha-cli');
   this.loadTasks('tasks');
 
-  this.registerTask('npmPack', 'Create NPM package.', function() {
-    var done;
-    done = this.async();
-    return grunt.util.spawn({
-      cmd: 'npm',
-      args: ['pack']
-    }, function(error, result, code) {
-      if (result.stderr) {
-        grunt.log.writeln(result.stderr);
-      }
-      if (result.stdout) {
-        grunt.log.writeln(result.stdout);
-      }
-      return done(!error);
-    });
-  });
-
   this.registerTask('default', ['test']);
   this.registerTask('build', ['clean', 'coffee']);
-  this.registerTask('package', ['clean', 'coffee', 'npmPack']);
 
   return this.registerTask('test', ['build', 'mkdir', 'mochacli']);
 };
