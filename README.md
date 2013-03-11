@@ -42,16 +42,24 @@ Type: `Array`
 
 An array of folder names to create.
 
+#### options.mode
+Type: `Number`
+
+The mode of the file to create. Defaults to `0777 & (~process.umask())`.
+
 ### Usage Examples
 
 #### Simple usage
-The following example will create a `tmp` folder:
+The following example will create a `tmp` folder that is only accessible to the owner:
 
 ```js
 grunt.initConfig({
   mkdir: {
-    options: {
-      create: ['tmp']
+    all: {
+      options: {
+        mode: 0700,
+        create: ['tmp']
+      },
     },
   },
 })
@@ -63,8 +71,10 @@ You can create multiple folders and even recursively create folders:
 ```js
 grunt.initConfig({
   mkdir: {
-    options: {
-      create: ['tmp', 'test/very/deep/folder']
+    all: {
+      options: {
+        create: ['tmp', 'test/very/deep/folder']
+      },
     },
   },
 })

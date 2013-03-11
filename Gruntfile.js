@@ -31,6 +31,12 @@ module.exports = function(grunt) {
         options: {
           create: ['tmp/c/d']
         }
+      },
+      mode: {
+        options: {
+          mode: 0700,
+          create: ['tmp/e']
+        }
       }
     },
     watch: {
