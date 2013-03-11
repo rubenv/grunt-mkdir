@@ -29,11 +29,13 @@ grunt.initConfig({
       // Task-specific options go here.
     },
     your_target: {
-      // Target-specific file lists and/or options go here.
+      // Target-specific options go here.
     },
   },
 })
 ```
+
+Note that we cannot use the standard `files` section in the configuration, as that one is filtered to only include existing files.
 
 ### Options
 
