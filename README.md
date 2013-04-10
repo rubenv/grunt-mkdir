@@ -2,7 +2,7 @@
 
 > Create directories with Grunt.
 
-[![Build Status](https://travis-ci.org/rubenv/grunt-git.png?branch=master)](https://travis-ci.org/rubenv/grunt-git)
+[![Build Status](https://travis-ci.org/rubenv/grunt-mkdir.png?branch=master)](https://travis-ci.org/rubenv/grunt-mkdir)
 
 ## Getting Started
 This plugin requires Grunt `~0.4.0`
