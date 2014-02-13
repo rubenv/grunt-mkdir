@@ -37,6 +37,20 @@ module.exports = function(grunt) {
           mode: 0700,
           create: ['tmp/e']
         }
+      },
+      group: {
+        options: {
+          mode: 0770,
+          group: 'http',
+          create: ['tmp/f']
+        }
+      },
+      owner: {
+        options: {
+          user: 'git',
+          group: 'http',
+          create: ['tmp/f']
+        }
       }
     },
     watch: {
