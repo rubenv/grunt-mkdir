@@ -51,6 +51,18 @@ Type: `Number`
 
 The mode of the file to create. Defaults to `0777 & (~process.umask())`.
 
+#### options.user
+Type: `String`
+
+The username or uid of the desired file owner. Defaults to current user.
+Please note that it only works with sudo privileges.
+
+#### options.group
+Type: `String`
+
+The groupname or gid of the desired file group. Defaults to user primary group.
+This may not work if your current user is not in the target group. If that's the case, use sudo.
+
 ### Usage Examples
 
 #### Simple usage
@@ -63,6 +75,40 @@ grunt.initConfig({
       options: {
         mode: 0700,
         create: ['tmp']
+      },
+    },
+  },
+})
+```
+
+#### Group usage
+This time, we'll give write permissions to the test group:
+
+```js
+grunt.initConfig({
+  mkdir: {
+    all: {
+      options: {
+        mode: 0770,
+        group: 'test',
+        create: ['tmp_group']
+      },
+    },
+  },
+})
+```
+
+#### Fileowner
+Now let's change the fileowner.
+Note: run grunt with sudo privileges.
+
+```js
+grunt.initConfig({
+  mkdir: {
+    all: {
+      options: {
+        user: 'someuser',
+        create: ['tmp_someuser']
       },
     },
   },
