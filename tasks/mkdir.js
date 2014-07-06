@@ -7,14 +7,12 @@ module.exports = function(grunt) {
     });
     grunt.verbose.writeflags(options, 'Options');
     return options.create.forEach(function(filepath) {
-      var e;
       grunt.log.write('Creating "' + filepath + '"...');
       try {
         filepath = grunt.template.process(filepath);
         grunt.file.mkdir(filepath, options.mode);
         return grunt.log.ok();
-      } catch (_error) {
-        e = _error;
+      } catch (e) {
         grunt.log.error();
         grunt.verbose.error(e);
         return grunt.fail.warn('Mkdir operation failed.');
