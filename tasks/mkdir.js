@@ -10,6 +10,7 @@ module.exports = function(grunt) {
     return options.create.forEach(function(filepath) {
       grunt.log.write('Creating "' + filepath + '"...');
       try {
+        filepath = grunt.template.process( filepath );
         grunt.file.mkdir(filepath, options.mode);
         return grunt.log.ok();
       } catch (e) {
