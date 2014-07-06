@@ -1,5 +1,6 @@
 module.exports = function(grunt) {
   this.initConfig({
+    dir: 'tmp/f',
     coffee: {
       all: {
         options: {
@@ -37,6 +38,11 @@ module.exports = function(grunt) {
           mode: 0700,
           create: ['tmp/e']
         }
+      },
+      template: {
+      	options: {
+      		create: ['<%=dir%>']
+      	}
       }
     },
     watch: {

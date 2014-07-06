@@ -18,3 +18,6 @@ describe 'mkdir', () ->
         assert(grunt.file.isDir('tmp/e'))
         stats = fs.statSync('tmp/e')
         assert.equal(stats.mode & 0o777, 0o700)
+
+    it 'Should create "tmp/f" using grunt.template', ->
+        assert(grunt.file.isDir('tmp/f'))

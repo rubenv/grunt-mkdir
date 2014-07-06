@@ -11,6 +11,7 @@ module.exports = (grunt) ->
             grunt.log.write('Creating "' + filepath + '"...')
 
             try
+                filepath = grunt.template.process(filepath)
                 grunt.file.mkdir(filepath, options.mode)
                 grunt.log.ok()
             catch e
