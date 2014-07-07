@@ -68,6 +68,7 @@ module.exports = function(grunt) {
   this.loadNpmTasks('grunt-contrib-coffee');
   this.loadNpmTasks('grunt-contrib-watch');
   this.loadNpmTasks('grunt-mocha-cli');
+  this.loadNpmTasks('grunt-release');
   this.loadTasks('tasks');
 
   this.registerTask('default', ['test']);
