@@ -1,9 +1,9 @@
 module.exports = (grunt) ->
     grunt.registerMultiTask 'mkdir', 'Make directories.', () ->
         options = @options
-            mode: null
+            mode: undefined
             create: []
-            
+
         grunt.verbose.writeflags(options, 'Options')
 
         # Create requested directories

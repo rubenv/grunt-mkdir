@@ -2,7 +2,7 @@ module.exports = function(grunt) {
   return grunt.registerMultiTask('mkdir', 'Make directories.', function() {
     var options;
     options = this.options({
-      mode: null,
+      mode: void 0,
       create: []
     });
     grunt.verbose.writeflags(options, 'Options');
