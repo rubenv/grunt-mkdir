@@ -1,7 +1,7 @@
 {
   "name": "grunt-mkdir",
   "description": "Create directories with Grunt.",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "homepage": "https://github.com/rubenv/grunt-mkdir",
   "author": {
     "name": "Ruben Vermeersch",
