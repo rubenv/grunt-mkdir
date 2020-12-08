@@ -61,6 +61,11 @@ module.exports = function(grunt) {
           reporter: 'spec'
         }
       }
+    },
+    release: {
+      options: {
+        additionalFiles: ['package-lock.json']
+      }
     }
   });
 
